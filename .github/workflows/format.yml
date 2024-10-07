@@ -27,10 +27,12 @@ jobs:
       # Step 5: Commit and push changes if Prettier has formatted any files
       - name: Commit and Push Changes
         env:
-          GITHUB_TOKEN: ${{ secrets.Token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git reset --hard
           git add .
           git diff-index --quiet HEAD || git commit -m "chore: auto format code with Prettier"
-          git push origin main 
+          git pull --rebase origin main  # 合併最新更改
+          git push --force origin main
