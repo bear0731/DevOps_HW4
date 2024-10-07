@@ -1,7 +1,9 @@
 # DevOps_HW4
 
 ### Recent ACtivities
+
 <!--START_SECTION:activity-->
+
 1. 📝 Committed to [bear0731/DevOps_HW4](https://github.com/bear0731/DevOps_HW4/commit/a53130a666276b34318c65cf4952fcee22cceb79)
 2. 📝 Committed to [bear0731/DevOps_HW4](https://github.com/bear0731/DevOps_HW4/commit/823ca9c9d8e1e07df341e707562bfad04af14fec)
 3. 📝 Committed to [bear0731/DevOps_HW4](https://github.com/bear0731/DevOps_HW4/commit/aa36b2ab45483cbe47a7ceec50a55ddfc30fa1b2)

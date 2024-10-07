@@ -13,16 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 使用版本化的 actions/checkout
+      # Step 1: Checkout the code (using actions/checkout@v4)
       - uses: actions/checkout@v4
 
-      # Step 3: Install dependencies
+      # Step 2: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run Prettier to check and auto-fix the format
+      # Step 3: Run Prettier to check and auto-fix the format
       - name: Run Prettier (Auto-fix)
-        run: npm run prettier -- --write .
+        run: npm run prettier -- --write "src/**/*.{js,ts,jsx,json,md,yml}"
+
+      # Step 4: Check the status of Git changes to see if there are any modifications
+      - name: Check for Git changes
+        run: git status
 
       # Step 5: Commit and push changes if Prettier has formatted any files
       - name: Commit and Push Changes
@@ -31,8 +35,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git reset --hard
-          git add .
+          git add --all
           git diff-index --quiet HEAD || git commit -m "chore: auto format code with Prettier"
-          git pull --rebase origin main  # 合併最新更改
           git push --force origin main

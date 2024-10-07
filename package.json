@@ -3,6 +3,6 @@
     "prettier": "^3.3.3"
   },
   "scripts": {
-  "prettier": "prettier --write ."
-}
+    "prettier": "prettier --write ."
+  }
 }
