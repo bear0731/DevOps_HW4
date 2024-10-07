@@ -36,4 +36,3 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "chore: auto format code with Prettier"
           git pull --rebase origin main  # 合併最新更改
           git push --force origin main
-update yml · bear0731/DevOps_HW4@d613c74
