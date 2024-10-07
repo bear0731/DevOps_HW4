@@ -1,2 +1,2 @@
-function sayHello(name){console.log("Hello, " + name);}
+function sayHello(name){console.log("HellO, " + name);}
 sayHello("GitHub Actions")
