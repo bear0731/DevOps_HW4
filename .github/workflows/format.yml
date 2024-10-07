@@ -1,3 +1,25 @@
+Skip to content
+Navigation Menu
+bear0731
+/
+DevOps_HW4
+
+Type / to search
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Format code with Prettier
+update yml #11
+Jobs
+Run details
+Workflow file for this run
+.github/workflows/format.yml at d613c74
 name: Format code with Prettier
 
 on:
@@ -31,6 +53,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git reset --hard
           git add .
           git diff-index --quiet HEAD || git commit -m "chore: auto format code with Prettier"
-          git push origin main 
+          git pull --rebase origin main  # 合併最新更改
+          git push --force origin main
+update yml · bear0731/DevOps_HW4@d613c74
